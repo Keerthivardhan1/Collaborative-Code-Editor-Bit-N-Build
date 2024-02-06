@@ -38,6 +38,9 @@
 
 import { useEffect } from 'react';
 import { EditorView, basicSetup } from '@codemirror/basic-setup';
+import {keymap} from "@codemirror/view"
+
+// import {EditorView, basicSetup} from "codemirror"
 import { EditorState } from '@codemirror/state';
 import { javascript } from '@codemirror/lang-javascript';
 import { yCollab } from 'y-codemirror.next';
@@ -83,7 +86,7 @@ export default function CodeMirrorEditor() {
                 yCollab(ytext, provider.awareness, { undoManager })
             ]
         });
-
+        // yCollab(ytext, provider.awareness, { undoManager })
          view = new EditorView({
             state,
             parent: document.querySelector('#editor')
